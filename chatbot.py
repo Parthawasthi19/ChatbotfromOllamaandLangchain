@@ -8,7 +8,8 @@ from langchain_core.prompts import ChatPromptTemplate
 st.title(" External API Free Chatbot")
 st.write("Made by Parth Awasthi, Solution Developer, I-Tech Mission")
 
-model = ChatOllama(model="llama3.2:1b", base_url="http://localhost:11434/")
+model = ChatOllama(model="llama3", base_url="http://<server-ip>:11434/")
+
 
 system_message = SystemMessagePromptTemplate.from_template("You are a helpful assistant that answers questions about a specific topic.")
 
