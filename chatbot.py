@@ -5,6 +5,14 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate, AIMessagePromptTemplate 
 from langchain_core.prompts import ChatPromptTemplate 
 
+import requests
+try:
+    response = requests.get("http://localhost:11434/")
+    print(response.status_code)
+except requests.exceptions.RequestException as e:
+    print("Error connecting to the server:", e)
+
+
 st.title(" External API Free Chatbot")
 st.write("Made by Parth Awasthi, Solution Developer, I-Tech Mission")
 
