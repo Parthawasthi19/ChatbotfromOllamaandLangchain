@@ -13,12 +13,15 @@ except requests.exceptions.RequestException as e:
     print("Error connecting to the server:", e)
 
 
-st.title(" External API Free Chatbot")
-st.write("Made by Parth Awasthi, Solution Developer, I-Tech Mission")
+st.title(" Gender Based Queries Chatbot")
+st.write("Made by Parth Awasthi, Solution Developer Intern, I-Tech Mission")
 
 model = ChatOllama(model="llama3.2:1b", base_url="http://localhost:11434/")
 
-system_message = SystemMessagePromptTemplate.from_template("You are a helpful assistant that answers questions about a specific topic.")
+system_message = SystemMessagePromptTemplate.from_template("You are an AI assistant focused on providing up-to-date, evidence-based information"
+    "about gender equality, gender-based violence prevention, economic empowerment of women, "
+    "political participation, health and reproductive rights, and education. "
+    "Provide well-researched responses, citing best practices and policies when possible.")
 
 if "chat_history" not in st.session_state:
     st.session_state['chat_history'] = []
